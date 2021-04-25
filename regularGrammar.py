@@ -1,6 +1,6 @@
 from collections import defaultdict
 
-class WordGenerator:
+class RegularGrammar:
     def __init__(self, type = 'right'):
         self.productions = defaultdict(set)     # dictionar -> cheie = neterminal; valoare = set de stringuri (terminale + 1 neterminal optional)
         self.nonterminals = set()
@@ -52,7 +52,11 @@ class WordGenerator:
                     result[step] = '' if nonterminal == '$' else string             # daca e lambda pun '' in loc de $
                     
                     if min_length <= len(result[step]) + curr_len <= max_length:    # daca lungimea cuv format pana acum e buna atunci retin cuvantul
-                        word = ''.join(result[:step+1])
+                        if self.type == 'right':                                    # daca gramatica e regulata la dreapta, iau de la stanga la dreapta altfel invers
+                            word = ''.join(result[:step+1])
+                        else:
+                            word = ''.join(result[step::-1])
+                                                  
                         words[len(word)].add(word)
                 else:                                                                   # daca exista neterminal la inceput sau sfarsit
                     result[step] = string[:-1] if self.type == 'right' else string[1:]  # iau stringul fara neterminal

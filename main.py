@@ -1,8 +1,9 @@
-import wordGenerator as  wg
+import regularGrammar as  reg
 import sys
 
+
 options = list(sys.argv)[1:]            # iau optiuni din cmd line daca exista
-wordGen = wg.WordGenerator()
+wordGen = reg.RegularGrammar()
 file_path = ''
 
 for i in range(0, len(options) - 1):    # setez optiunile din cmd line
