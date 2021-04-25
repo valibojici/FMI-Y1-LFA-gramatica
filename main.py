@@ -15,9 +15,9 @@ for i in range(0, len(options) - 1):    # setez optiunile din cmd line
 
 wordGen.setNonterminals(input('\nNeterminale (litere mari separate prin spatiu): ').split())
 wordGen.setTerminals(input('\nTerminale (litere mici separate prin spatiu): ').split())
-wordGen.setStartSymbol(input('\nSimbol start: '))
+wordGen.setStartSymbol(input('\nSimbol start: ').strip())
 
-nrProd = int(input('\nNumar productii: '))
+nrProd = int(input('\nNumar productii: ').strip())
 for i in range(nrProd):
     prod = input('\nProdutie ( <simbol> = <string>[|<string>...] $ = lambda) ')
     
