@@ -73,11 +73,11 @@ class RegularGrammar:
         
         if file_path is not None:                               # daca file_path exista atunci afisez in fisier
             with open(file_path, 'w') as g:
-                for len, words in sorted(wordDict.items()):
-                    g.write(f'{len} -> ' + str(sorted(words)) + '\n')
+                for i in range(min_length, max_length+1):
+                    g.write(f'{i} ->' + str(sorted(wordDict[i])) + '\n')
         else:                                                   # altfel afisez pe consola
-            for len, words in sorted(wordDict.items()):
-                    print(f'{len} ->',sorted(words))
+            for i in range(min_length, max_length+1):
+                    print(f'{i} ->', sorted(wordDict[i]))
 
 
 class badProduction(Exception):

@@ -13,13 +13,13 @@ for i in range(0, len(options) - 1):    # setez optiunile din cmd line
         file_path = options[i+1]
 
 
-wordGen.setNonterminals(input('\nNeterminale (litere mari separate prin spatiu): ').split())
-wordGen.setTerminals(input('\nTerminale (litere mici separate prin spatiu): ').split())
+wordGen.setNonterminals([s.strip() for s in input('\nNeterminale (litere mari separate prin spatiu): ').split()])
+wordGen.setTerminals([s.strip() for s in input('\nTerminale (litere mici separate prin spatiu): ').split()])
 wordGen.setStartSymbol(input('\nSimbol start: ').strip())
 
 nrProd = int(input('\nNumar productii: ').strip())
 for i in range(nrProd):
-    prod = input('\nProdutie ( <simbol> = <string>[|<string>...] $ = lambda) ')
+    prod = input('\nProdutie (<simbol> = <string>[|<string>...] $ = lambda) ')
     
     simbol = prod.split('=')[0].strip()                                         
     strings = [string.strip() for string in prod.split('=')[1].strip().split('|')]
