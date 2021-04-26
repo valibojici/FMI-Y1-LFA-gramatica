@@ -1,4 +1,4 @@
-# Generare cuvinte gramatica regulata
+# Generare cuvinte gramatica regulata (python 3)
 Pentru o gramatica regulata, sa se genereze toate cuvintele avand o lungime maxima data.
 
 Pentru gramatica liniara la stanga (implicit la dreapta)
