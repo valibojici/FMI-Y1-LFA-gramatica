@@ -1,4 +1,4 @@
-# generare-cuvinte
+# Generare cuvinte gramatica regulata
 Pentru o gramatica regulata, sa se genereze toate cuvintele avand o lungime maxima data.
 
 Pentru gramatica liniara la stanga (implicit la dreapta)
