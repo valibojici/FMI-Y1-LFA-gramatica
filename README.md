@@ -14,7 +14,7 @@ python main.py -f <file_path>
 Lungimea maxima poate sa fie un numar sau un range (de ex. 2-4)
 ```
 Lungime maxima: 2-4
-2 -> { aa, bb }
+2 -> ['aa', 'bb']
 3 -> []
-4 -> { abca, abba, abbc}
+4 -> ['abca', 'abba', 'abbc']
 ```
