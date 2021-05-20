@@ -46,6 +46,12 @@ class RegularGrammar:
         
         def bkt(step, curr_len, symbol):
             for string in self.productions[symbol]:
+                if len(string) == 1 and string[0] in self.nonterminals:             # daca productia are doar 1 simbol si e neterminal
+                    if symbol != string[0]:                                         # daca am productii A -> A le ignor
+                        bkt(step, curr_len, string[0])                              # daca am producta A -> B fac backtrack fara sa modific ceva
+                        continue
+
+
                 nonterminal = string[-1] if self.type == 'right' else string[0]     # neterminalul este ori la inceput ori la final
 
                 if nonterminal == '$' or nonterminal not in self.nonterminals:      # daca nu exista neterminal (ultima sau prima litera e lambda sau terminal)

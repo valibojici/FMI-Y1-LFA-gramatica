@@ -13,13 +13,13 @@ for i in range(0, len(options) - 1):    # setez optiunile din cmd line
         file_path = options[i+1]
 
 
-wordGen.setNonterminals([s.strip() for s in input('\nNeterminale (litere mari separate prin spatiu): ').split()])
-wordGen.setTerminals([s.strip() for s in input('\nTerminale (litere mici separate prin spatiu): ').split()])
-wordGen.setStartSymbol(input('\nSimbol start: ').strip())
+wordGen.setNonterminals([s.strip() for s in input('Neterminale (litere mari separate prin spatiu): ').split()])
+wordGen.setTerminals([s.strip() for s in input('Terminale (litere mici separate prin spatiu): ').split()])
+wordGen.setStartSymbol(input('Simbol start: ').strip())
 
-nrProd = int(input('\nNumar productii: ').strip())
+nrProd = int(input('Numar productii: ').strip())
 for i in range(nrProd):
-    prod = input('\nProdutie (<simbol> = <string>[|<string>...] $ = lambda) ')
+    prod = input('Produtie (<simbol> = <string>[|<string>...] $ = lambda) ')
     
     simbol = prod.split('=')[0].strip()                                         
     strings = [string.strip() for string in prod.split('=')[1].strip().split('|')]
@@ -30,7 +30,7 @@ for i in range(nrProd):
 ok = True
 
 while ok:
-    n = input('\nLungime maxima: ')
+    n = input('Lungime maxima: ')
     if n.find('-') != -1:
         min_len, max_len = map(int, n.split('-'))
     else:
